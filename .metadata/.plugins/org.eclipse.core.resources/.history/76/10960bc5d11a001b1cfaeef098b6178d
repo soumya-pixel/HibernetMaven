@@ -1,0 +1,28 @@
+package com.oehm5;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+       System.out.println("start");
+       SessionFactory factory = new Configuration().configure().buildSessionFactory();
+       System.out.println(factory);
+       System.out.println(factory.isClosed());
+       //creating new student
+       Student st = new Student();
+       st.setId(1);
+       st.setCity("bbsr");
+       st.setName("ssa");
+       System.out.println(st);
+       Session session = factory.openSession();
+       session.beginTransaction();
+       session.save(st);
+       session.getTransaction().commit();
+       
+    }
+}

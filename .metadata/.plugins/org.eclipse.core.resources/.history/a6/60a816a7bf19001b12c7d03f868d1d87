@@ -1,0 +1,69 @@
+package com.oehm5.demo.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.oehm5.demo.dao.Associationdao;
+import com.oehm5.demo.dao.StudentHqlDao;
+import com.oehm5.demo.dao.Studentdao;
+import com.oehm5.demo.dto.Captain;
+import com.oehm5.demo.dto.Model;
+import com.oehm5.demo.dto.Student;
+import com.oehm5.demo.dto.Team;
+
+public class Test 
+{
+public static void main(String[] args) 
+{
+	//Student student = new Student();
+	//student.setId(101L);
+	/*student.setName("ssl");
+	student.setBranch("cst");
+	student.setContactnumber(1381449587L);
+    student.setAge(24L);
+    Studentdao studentdao = new Studentdao();*/
+    //studentdao.deletestudentbyid(101L);
+    //studentdao.updatestudentbyid(100L, 9437110L);
+    //Student std = studentdao.getstudentbyid(100L);
+    //.out.println(std);
+    //studentdao.savestudentdetails(student);
+    //StudentHqlDao studentHqlDao = new StudentHqlDao();
+    /*studentHqlDao.getstudents().forEach(a->{
+    	System.out.println(a);
+    });
+    */
+    //Student std = studentHqlDao.getstudentbycontactnumber(9437110L);
+    //System.out.println(std);
+	
+	/*Captain captain = new Captain();
+	captain.setName("dhoni");
+	captain.setAge(38L);
+	captain.setJersynumber(7L);
+    captain.setTotalmatches(300L);
+    
+    Team team = new Team();
+    team.setCountryname("india");
+    team.setTeamtype("cricket");
+    team.setSize(11L);
+    team.setRank(3L);
+    team.setCaptain(captain);*/
+    
+    Associationdao associationdao = new Associationdao();
+    //associationdao.saveteamdetails(team);
+
+	List<Model> list = new ArrayList<Model>();
+	Model model1 = new Model();
+	model1.setPrice("hp");
+	model1.setModelnumber("1");
+	model1.setPrice(60000D);
+	model1.setColor("silver");
+	
+	Model model2 = new Model();
+	model2.setName("msi");
+	model2.setModelnumber("2");
+	model2.setPrice(55000D);
+	model2.setColor("black");
+	
+	
+}
+}

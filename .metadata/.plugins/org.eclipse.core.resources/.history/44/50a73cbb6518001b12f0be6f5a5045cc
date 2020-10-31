@@ -1,0 +1,15 @@
+package com.oehm5.demo.dao;
+
+import org.hibernate.Session;
+
+import com.mysql.cj.xdevapi.SessionFactory;
+import com.oehm5.demo.dto.Team;
+
+public class Associationdao 
+{
+
+	public void saveteamdetails(Team team)
+	{
+	 Session session = SessionFactoryUtil().getSessionFactory().openSession();
+	}
+}

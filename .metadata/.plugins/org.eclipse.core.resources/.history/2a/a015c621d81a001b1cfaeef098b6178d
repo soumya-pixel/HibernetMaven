@@ -1,0 +1,14 @@
+package com.oehm5;
+
+import java.io.Serializable;
+
+import javax.persistence.Id;
+
+public class Question implements Serializable
+{
+	@Id
+	private long questionid;
+	
+	private String question;
+
+}

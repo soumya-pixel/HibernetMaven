@@ -1,0 +1,12 @@
+package com.oehm5.demo.dao;
+
+import com.mysql.cj.xdevapi.SessionFactory;
+
+public class Associationdao 
+{
+
+	public void saveteamdetails(Team team)
+	{
+		SessionFactory.getSessionFactory().opensession();
+	}
+}

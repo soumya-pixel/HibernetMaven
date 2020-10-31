@@ -1,0 +1,89 @@
+package com.oehm5.basics.dto;
+
+import java.io.Serializable;
+
+import javax.persistence.Cacheable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+@Table(name = "student_details")
+public class Student implements Serializable{
+
+	@Id
+	@Column(name = "id")
+	@GenericGenerator(name = "std_auto", strategy = "increment")
+	@GeneratedValue(generator = "std_auto")
+	private Long id;
+	
+	@Column(name = "name")
+	private String name;
+	
+	@Column(name = "branch")
+	private String branch;
+	
+	@Column(name = "contact_number")
+	private Long contactNumber;
+	
+	@Column(name = "age")
+	private Long age;
+	
+	public Student() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
+
+	public Long getContactNumber() {
+		return contactNumber;
+	}
+
+	public void setContactNumber(Long contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+
+	public Long getAge() {
+		return age;
+	}
+
+	public void setAge(Long age) {
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", branch=" + branch + ", contactNumber=" + contactNumber
+				+ ", age=" + age + "]";
+	}
+	
+}

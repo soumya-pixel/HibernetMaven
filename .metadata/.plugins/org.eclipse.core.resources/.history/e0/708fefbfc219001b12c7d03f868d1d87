@@ -1,0 +1,36 @@
+package com.oehm5.demo.dto;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+
+public class Brand implements Serializable
+{
+	@Id
+	   @Column(name="id")
+	   @GenericGenerator(name = "bd_auto", strategy ="increment")
+	   @GeneratedValue(generator ="bd_auto")
+	   private long id;
+	   
+	   @Column
+	   private String name;
+	   
+	   @Column
+	   private String type;
+	   
+	   @Column
+	   private String yearofestd;
+	   
+	   @Column
+	   private String ambassador;
+	   
+	   
+	   
+	   
+	
+
+}

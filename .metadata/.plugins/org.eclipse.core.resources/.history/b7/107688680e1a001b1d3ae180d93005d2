@@ -1,0 +1,71 @@
+package com.oehm5.demo.dto;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+
+@Entity
+@Table(name="Actor")
+public class Actor implements Serializable
+{
+	 @Id
+	   @Column(name="id")
+	   @GenericGenerator(name = "ac_auto", strategy ="increment")
+	   @GeneratedValue(generator ="ac_auto")
+	    private long id;
+	   
+	 @Column(name="actor_name")
+	   private String actorname;
+	   
+	 @Column(name="age")
+	   private String age;
+	 
+	 @ManyToMany
+	 private List<Movie> list;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getActorname() {
+		return actorname;
+	}
+
+	public void setActorname(String actorname) {
+		this.actorname = actorname;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public List<Movie> getList() {
+		return list;
+	}
+
+	public void setList(List<Movie> list) {
+		this.list = list;
+	}
+	   
+	 
+	   
+	   
+
+}

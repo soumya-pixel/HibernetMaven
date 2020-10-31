@@ -1,0 +1,23 @@
+package com.oehm5.demo.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.oehm5.demo.dto.Team;
+
+public class Associationdao 
+{
+
+	public void saveteamdetails(Team team)
+	{
+		Configuration configuration = new Configuration();
+		 configuration.configure();
+		 configuration.addAnnotatedClass(Team.class);
+		 org.hibernate.SessionFactory sessionFactory = configuration.buildSessionFactory();
+		 Session session = ((org.hibernate.SessionFactory) sessionFactory).openSession();
+		 Transaction transaction = session.beginTransaction();
+		 session.save(team);
+		 transaction.commit();
+	}
+}

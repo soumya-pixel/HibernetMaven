@@ -1,0 +1,16 @@
+package com.oehm5;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+public class Answer implements Serializable
+{
+	@Id
+	@Column(name="anwser_id")
+   private long answerid;
+   
+	@Column(name="answer")
+   private String answer;
+}

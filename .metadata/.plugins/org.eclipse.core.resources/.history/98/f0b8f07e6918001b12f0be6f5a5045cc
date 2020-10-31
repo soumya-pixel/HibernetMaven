@@ -1,0 +1,92 @@
+package com.oehm5.demo.dto;
+
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name="team")
+public class Team implements Serializable
+{
+	   @Id
+	   @Column(name="id")
+	   @GenericGenerator(name = "tm_auto", strategy = "increment")
+	   @GeneratedValue(generator ="tm_auto")
+	   private long id;
+	   
+	   @Column(name="country_name")
+	   private String countryname;
+	   
+	   @Column(name="team_type")
+	   private String teamtype;
+	   
+	   @Column(name="size")
+	   private long size;
+	   
+	   @Column(name="rank")
+	   private long rank;
+	   
+	   @OneToOne(cascade =CascadeType.ALL )
+	   @JoinColumn(name ="f_id" )
+	   private Captain captain;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public StringBuffer getCountryname() {
+		return countryname;
+	}
+
+	public void setCountryname(StringBuffer countryname) {
+		this.countryname = countryname;
+	}
+
+	public String getTeamtype() {
+		return teamtype;
+	}
+
+	public void setTeamtype(String teamtype) {
+		this.teamtype = teamtype;
+	}
+
+	public long getSize() {
+		return size;
+	}
+
+	public void setSize(long size) {
+		this.size = size;
+	}
+
+	public long getRank() {
+		return rank;
+	}
+
+	public void setRank(long rank) {
+		this.rank = rank;
+	}
+
+	public Captain getCaptain() {
+		return captain;
+	}
+
+	public void setCaptain(Captain captain) {
+		this.captain = captain;
+	}
+	   
+	   
+	
+}

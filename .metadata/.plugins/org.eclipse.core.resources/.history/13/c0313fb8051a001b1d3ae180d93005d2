@@ -1,0 +1,6 @@
+package com.oehm5.demo.dto;
+
+public class Movie 
+{
+
+}
